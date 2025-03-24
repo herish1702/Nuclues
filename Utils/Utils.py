@@ -34,9 +34,9 @@ def perform_scroll_to(driver,webelement):
 def perform_upload_file(upload_webelement, file_path):
     upload_webelement.send_keys(file_path)
 
-def move_to_element_and_send(driver, webelement, filepath):
+def move_to_element_and_send(driver, webelement, data):
     actions = ActionChains(driver)
-    actions.move_to_element(webelement).send_keys(filepath).perform()
+    actions.move_to_element(webelement).send_keys(data).perform()
 
 def clear_existing_data(webelement):
     webelement.clear()

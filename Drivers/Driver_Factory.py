@@ -24,14 +24,16 @@ def initialize_firefox_driver():
     driver.get(static_data.url)
     return driver
     
+
 def initialize_edge_driver():
     edge_options = EdgeOptions()
     # edge_options.add_argument("--headless")  # Uncomment for headless mode
-    edge_options.set_preference("detach", True) 
+    edge_options.add_experimental_option("detach", True)  
     driver = webdriver.Edge(options=edge_options)
     driver.maximize_window()
     driver.get(static_data.url)
     return driver
+
 
 def initialize_safari_driver():
     driver = webdriver.Safari()
